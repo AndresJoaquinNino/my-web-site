@@ -1,6 +1,6 @@
 import './App.scss';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 const App = () => {
     return (
@@ -8,6 +8,9 @@ const App = () => {
             <div className='page'>
                 <Navbar/>
                 <Hero/>
+            </div>
+            <div className="page gradient-bg">
+
             </div>
         </div>
     );
