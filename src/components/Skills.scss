@@ -30,13 +30,13 @@
         &-item{
             display: flex;
             align-items: center;
-            gap: 0.25em;
+            gap: 1em;
             font-size: fonts.$paragraph-bigger;
             font-weight: bold;
         }
         &-icon{
             display: grid;
-            font-size: 2rem;
+            font-size: 1rem;
         }
     }
 }

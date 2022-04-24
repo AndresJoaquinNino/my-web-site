@@ -1,5 +1,5 @@
 import './Skills.scss';
-import { MdArrowRight } from 'react-icons/md';
+import { BsDiamond } from "react-icons/bs";
 
 const ListSkills = ({title,skills}) => {
     return(
@@ -11,7 +11,7 @@ const ListSkills = ({title,skills}) => {
                 skills.map((ele,index) => (
                     <li key={index} className='skills-set__list-item'>
                         <div className='skills-set__list-icon'>
-                            <MdArrowRight/>
+                            <BsDiamond/>
                         </div>
                         <span>{ ele }</span>
                     </li>
