@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
     return(
-        <>
+        <header className='page-header'>
             <nav className='page__navbar'>
                 <div className='page__navbar-lang'>
                     EN
@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className="page__sidebar-list__item">CONTACT</div>
                 </ul>
             </motion.aside>
-        </>
+        </header>
     );
 }
 

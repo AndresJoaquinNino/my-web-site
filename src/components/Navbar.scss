@@ -2,13 +2,18 @@
 @use '../scss/fonts';
 @use '../scss/colors';
 
-.page__navbar{
-    height: 4rem;
+.page-header{
     width: 100%;
-    padding: 0 1rem;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+}
+.page__navbar{
+    height: 4rem;
+    width: min(100%,1250px);
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
