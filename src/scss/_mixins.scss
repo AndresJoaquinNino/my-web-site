@@ -1,0 +1,16 @@
+@mixin page-section() {
+    width: min(100%,1250px);
+    padding: 1rem;
+}
+
+@mixin flex-center($direction:row,$space:0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if ( $direction != row){
+        flex-direction: $direction;
+    }
+    @if ( $space > 0 ) {
+        gap: $space;
+    }
+}
