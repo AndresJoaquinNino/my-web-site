@@ -1,6 +1,7 @@
 import './App.scss';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 
 const App = () => {
     return (
@@ -9,8 +10,10 @@ const App = () => {
                 <Navbar/>
                 <Hero/>
             </div>
-            <div className="page gradient-bg">
-
+            <div className="gradient-bg">
+                <div className="page">
+                    <About/>
+                </div>
             </div>
         </div>
     );
