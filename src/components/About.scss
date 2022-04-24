@@ -4,6 +4,7 @@
 
 .page__about{
     width: 100%;
+    margin-bottom: 6rem;
     &-content{
         width: 100%;
         @include flex-center(column,3rem);
@@ -53,6 +54,7 @@
     .page__about{
         display: flex;
         flex-direction: column;
+        margin-bottom: 10rem;
         &-content{
             width: 100%;
             flex-direction: row-reverse;
