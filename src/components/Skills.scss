@@ -3,18 +3,13 @@
 @use '../scss/colors';
 
 .page__skills{
-    $max-width: min(100%,70rem);
     &-header{
         font-size: fonts.$header;
         font-weight: bold;
-        width: $max-width;
-        margin: 0 auto;
         margin-bottom: 2rem;
     }
     &-content{
         padding: 0 2rem;
-        width: $max-width;
-        margin: 0 auto;
     }
 }
 .skills-set{
