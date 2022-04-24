@@ -71,9 +71,16 @@ $divider-colors: (
         margin: 1rem 0;
     }
 }
+.divider--only-desk{
+    display: none;
+}
+
 @media (min-width: 992px) {
     .transparent-box{
         overflow: auto;
+    }
+    .divider--only-desk{
+        display: block;
     }
 }
 @import './scss/button';
