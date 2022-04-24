@@ -1,17 +1,28 @@
 import './Hero.scss';
 import Typewriter from 'typewriter-effect';
 import codeText from '../helpers/codeText';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
 
     const typewriterInit = (typewriter) => {
-        typewriter.typeString(codeText).start();
+        typewriter.pauseFor(1000).typeString(codeText).start();
     }
 
     const typewriterOptions = {
         autoStart: true,
         cursor: '_',
         delay: 25,
+    }
+
+    const typewriterVariant = {
+        animation : {
+            height:['20%','20%','100%'],
+            width:['10%','100%','100%']
+        },
+        transition : {
+            duration:1
+        }
     }
 
     return (
@@ -27,9 +38,10 @@ const Hero = () => {
                     </p>
                 </header>
                 <div className="page__hero-content__code">
-                    <div className='transparent-box'>
+                    <motion.div className='transparent-box'
+                    animate='animation' transition='transition' variants={typewriterVariant}>
                         <Typewriter onInit={typewriterInit} options={typewriterOptions}/>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className='page__hero-cta'>
