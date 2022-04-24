@@ -1,21 +1,60 @@
 @use './scss/fonts';
 @use './scss/colors';
 
+@mixin flex-center($direction:row,$space:0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $direction != row {
+        flex-direction: column;
+    }
+    @if $space > 0 {
+        gap: $space;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-image: url('./assets/Sprinkle.svg');
     font-family: fonts.$primary;
     color: colors.$light;
 }
-.wrapper{
+.page{
     display: flex;
     justify-content: center;
     position: relative;
 }
-.section{
-    width: min(100%,1250px);
-    padding: 1rem;
+
+.transparent-box{
+    font-family: fonts.$secondary;
+    background-color: colors.$grey-transparent;
+    padding: 1em;
+    width: 100%;
 }
+
+.gradient-text{
+    background: linear-gradient(90deg, colors.$secondary 0%, colors.$light 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+$divider-colors: (
+    primary: colors.$primary,
+    secondary: colors.$secondary,
+    light-transparent: colors.$light-transparent
+);
+
+@each $name, $color in $divider-colors {
+    .divider-#{$name}{
+        border-color: $color;
+        background-color: $color;
+        margin: 1rem 0;
+    }
+}
+@import './scss/button';
