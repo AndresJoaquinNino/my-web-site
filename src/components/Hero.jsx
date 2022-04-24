@@ -11,7 +11,7 @@ const Hero = () => {
     const typewriterOptions = {
         autoStart: true,
         cursor: '_',
-        delay: 2,
+        delay: 25,
     }
 
     return (
