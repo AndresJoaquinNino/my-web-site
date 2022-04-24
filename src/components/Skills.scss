@@ -7,9 +7,9 @@
     &-header{
         font-size: fonts.$header;
         font-weight: bold;
-        margin-bottom: 2rem;
         width: $max-width;
         margin: 0 auto;
+        margin-bottom: 2rem;
     }
     &-content{
         padding: 0 2rem;
@@ -42,10 +42,18 @@
 }
 @media (min-width: 992px) {
     .page__skills{
+        &-header{
+            margin-bottom: 4rem;
+        }
         &-content{
             padding: 0;
             display: flex;
             justify-content: space-around;
+        }
+    }
+    .skills-set{
+        &__list{
+            line-height: 4rem;
         }
     }
 }
