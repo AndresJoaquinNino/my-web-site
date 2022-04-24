@@ -30,10 +30,13 @@ body{
 }
 
 .transparent-box{
+    font-size: fonts.$paragraph;
     font-family: fonts.$secondary;
     background-color: colors.$grey-transparent;
     padding: 1em;
     width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
 
 .gradient-text{
@@ -57,4 +60,10 @@ $divider-colors: (
         margin: 1rem 0;
     }
 }
+@media (min-width: 992px) {
+    .transparent-box{
+        overflow: auto;
+    }
+}
 @import './scss/button';
+@import './scss/utils';

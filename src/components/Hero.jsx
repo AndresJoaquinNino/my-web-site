@@ -1,6 +1,19 @@
 import './Hero.scss';
+import Typewriter from 'typewriter-effect';
+import codeText from '../helpers/codeText';
 
 const Hero = () => {
+
+    const typewriterInit = (typewriter) => {
+        typewriter.typeString(codeText).start();
+    }
+
+    const typewriterOptions = {
+        autoStart: true,
+        cursor: '_',
+        delay: 2,
+    }
+
     return (
         <main className='page__hero'>
             <div className='page__hero-content'>
@@ -13,8 +26,10 @@ const Hero = () => {
                         Passionate for the frontend, creating awesome web sites for all internet.
                     </p>
                 </header>
-                <div className="page__hero-content__code transparent-box">
-                    const Awesome = 0;
+                <div className="page__hero-content__code">
+                    <div className='transparent-box'>
+                        <Typewriter onInit={typewriterInit} options={typewriterOptions}/>
+                    </div>
                 </div>
             </div>
             <div className='page__hero-cta'>
