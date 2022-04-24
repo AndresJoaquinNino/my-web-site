@@ -1,0 +1,36 @@
+@use './colors';
+@use './fonts';
+
+@function select-text-color($bg-color){
+    @if (lightness($bg-color) > 70) {
+        @return colors.$dark;
+    }
+    @return colors.$light;
+}
+
+.btn{
+    font-family: fonts.$secondary;
+    outline: none;
+    border: none;
+    width: 45%;
+    padding: 0.5rem;
+    font-size: 1.35rem;
+}
+$btn-colors: (
+    primary: colors.$primary,
+    secondary: colors.$secondary,
+);
+
+@each $name, $color in $btn-colors {
+    .btn--#{$name}{
+        background-color: $color;
+        color: select-text-color($color);
+        border: 0.15rem solid $color;
+        &-transp{
+            background-color: transparent;
+            color: $color;
+            border: 0.15rem solid $color;
+        }
+    }
+}
+
