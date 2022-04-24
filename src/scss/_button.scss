@@ -15,7 +15,11 @@
     width: 45%;
     padding: 0.5rem;
     font-size: 1.35rem;
+    &--full{
+        width: 100%;
+    }
 }
+
 $btn-colors: (
     primary: colors.$primary,
     secondary: colors.$secondary,
