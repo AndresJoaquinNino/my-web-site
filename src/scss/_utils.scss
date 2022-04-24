@@ -1,0 +1,28 @@
+@use './colors';
+
+$text-colors: (
+    primary: colors.$primary,
+    secondary: colors.$secondary,
+    light: colors.$light,
+);
+
+@each $name, $color in $text-colors {
+    .text-#{$name}{
+        color: $color;
+    }
+}
+
+@each $number in (1,2,3,4,5) {
+    .mt-#{$number}{
+        margin-top: #{$number}rem;
+    }
+    .mr-#{$number}{
+        margin-right: #{$number}rem;
+    }
+    .mb-#{$number}{
+        margin-bottom: #{$number}rem;
+    }
+    .ml-#{$number}{
+        margin-left: #{$number}rem;
+    }
+}
