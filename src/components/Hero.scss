@@ -4,6 +4,7 @@
 
 .page__hero{
     height: 90vh;
+    margin-bottom: 10vh;
     width: 100%;
     @include flex-center(column,1.5rem);
     &-content{
