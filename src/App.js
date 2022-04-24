@@ -1,11 +1,10 @@
 import './App.scss';
+import Hero from './components/Hero';
 
 const App = () => {
     return (
-        <div className='wrapper'>
-            <div className="section">
-                asdf
-            </div>
+        <div className='page'>
+            <Hero/>
         </div>
     );
 }
