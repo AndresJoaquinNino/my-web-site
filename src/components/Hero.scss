@@ -4,7 +4,7 @@
 
 .page__hero{
     height: 90vh;
-    @include page-section();
+    width: 100%;
     @include flex-center(column,1.5rem);
     &-content{
         width: 100%;
