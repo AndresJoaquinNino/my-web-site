@@ -1,0 +1,75 @@
+@use '../scss/mixins' as *;
+@use '../scss/fonts';
+@use '../scss/colors';
+
+.page__about{
+    width: 100%;
+    &-content{
+        width: 100%;
+        @include flex-center(column,3rem);
+        &__text{
+            font-size: fonts.$paragraph-bigger;
+        }
+        &__photo{
+            width: min(85%,20rem);
+            position: relative;
+            $border: 4px solid colors.$secondary;
+            $box-size: 5rem;
+            --corner: -1em;
+            &::after,&::before{
+                content: '';
+                position: absolute;
+                width: $box-size;
+                height: $box-size;
+                transition: all 0.5s ease;
+            }
+            &::after{
+                right: var(--corner);
+                bottom: var(--corner);
+                border-right: $border;
+                border-bottom: $border;
+            }
+            &::before{
+                left: var(--corner);
+                top: var(--corner);
+                border-left: $border;
+                border-top: $border;
+            }
+            &:hover{
+                --corner: -1.5em;
+            }
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-header{
+        width: 100%;
+        font-size: fonts.$header;
+    }
+}
+@media (min-width: 992px) {
+    .page__about{
+        display: flex;
+        flex-direction: column;
+        &-content{
+            width: 100%;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            &__text{
+                width: 45%;
+                line-height: 1.2;
+            }
+            &__photo{
+                margin: auto;
+            }
+        }
+        &-header{
+            align-self: flex-end;
+            width: 45%;
+        }
+    }
+}
+
+
