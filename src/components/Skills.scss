@@ -10,6 +10,10 @@
     }
     &-content{
         padding: 0 2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
 .skills-set{
@@ -42,8 +46,6 @@
         }
         &-content{
             padding: 0;
-            display: flex;
-            justify-content: space-around;
         }
     }
     .skills-set{
