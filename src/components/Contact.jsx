@@ -1,4 +1,6 @@
 import './Contact.scss';
+import { FaGithub, FaLinkedin  } from "react-icons/fa";
+import { MdSend, MdEmail } from "react-icons/md";
 
 const Contact = () => {
     return (
@@ -12,9 +14,15 @@ const Contact = () => {
                 <input type="text" className="page__contact__form-input" placeholder='Email'/>
                 <textarea className="page__contact__form-area" placeholder='Message'/>
                 <button className='btn btn--primary btn--full'>
-                    Send
+                    <span>Send</span>
+                    <MdSend/>
                 </button>
             </form>
+            <div className='page__contact__icons'>
+                <FaLinkedin/>
+                <FaGithub/>
+                <MdEmail className='page__contact__icons-bigger'/>
+            </div>
         </div>
     );
 }
