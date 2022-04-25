@@ -7,6 +7,7 @@
     width: min(100%,450px);
     &__icons{
         font-size: 2rem;
+        margin-bottom: 1rem;
         @include flex-center(row,4rem);
         &-bigger{
             font-size: 2.5rem;
@@ -20,7 +21,6 @@
     overflow: hidden;
     &__group{
         height: 4rem;
-        // margin-bottom: 4px;
         &-msg{
             color: colors.$secondary;
             font-size: 0.9rem;
