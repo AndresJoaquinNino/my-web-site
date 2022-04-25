@@ -5,16 +5,30 @@
 .page__contact{
     margin: 0 auto;
     width: min(100%,450px);
-    &__form{
-        padding: 1rem 1.5rem;
-        margin-bottom: 3rem;
-        border: 2.5px solid colors.$light-transparent;
-        overflow: hidden;
+    &__icons{
+        font-size: 2rem;
+        @include flex-center(row,4rem);
+        &-bigger{
+            font-size: 2.5rem;
+        }
+    }
+}
+.form{
+    padding: 1rem 1.5rem;
+    margin-bottom: 3rem;
+    border: 2.5px solid colors.$light-transparent;
+    overflow: hidden;
+    &__group{
+        height: 4rem;
+        // margin-bottom: 4px;
+        &-msg{
+            color: colors.$secondary;
+            font-size: 0.9rem;
+        }
         &-input,&-area{
             width: 100%;
             font-size: fonts.$paragraph;
             font-family: fonts.$secondary;
-            margin-bottom: 1rem;
             background-color: colors.$grey-transparent;
             color: colors.$light;
             outline: none;
@@ -26,14 +40,10 @@
             min-width: 100%;
             max-width: 100%;
             min-height: 10rem;
-            max-height: 15rem;
+            max-height: 10rem;
         }
-    }
-    &__icons{
-        font-size: 2rem;
-        @include flex-center(row,4rem);
-        &-bigger{
-            font-size: 2.5rem;
+        &--area{
+            height: 12rem;
         }
     }
 }

@@ -9,10 +9,19 @@ const Contact = () => {
                 <h1>Contact me</h1>
                 <hr className="divider-secondary" />
             </header>
-            <form className='page__contact__form'>
-                <input type="text" className="page__contact__form-input" placeholder='Name'/>
-                <input type="text" className="page__contact__form-input" placeholder='Email'/>
-                <textarea className="page__contact__form-area" placeholder='Message'/>
+            <form className='form'>
+                <div className="form__group">
+                    <input type="text" className="form__group-input" placeholder='Name'/>
+                    <span className='form__group-msg'> * El nombre no puede estar en blanco</span>
+                </div>
+                <div className="form__group">
+                    <input type="email" className="form__group-input" placeholder='Email'/>
+                    <span className='form__group-msg'> * El formato no es correcto</span>
+                </div>
+                <div className="form__group form__group--area">
+                    <textarea className="form__group-area" placeholder='Message'/>
+                    <span className='form__group-msg'> * El mensaje no puede estar en blanco</span>
+                </div>
                 <button className='btn btn--primary btn--full'>
                     <span>Send</span>
                     <MdSend/>
