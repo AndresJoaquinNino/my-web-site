@@ -28,9 +28,15 @@ const Contact = () => {
                 </button>
             </form>
             <div className='page__contact__icons'>
-                <FaLinkedin/>
-                <FaGithub/>
-                <MdEmail className='page__contact__icons-bigger'/>
+                <a href="https://www.linkedin.com/in/andr%C3%A9s-joaquin-ni%C3%B1o-rodil/">
+                    <FaLinkedin/>
+                </a>
+                <a href="https://github.com/AndresJoaquinNino">
+                    <FaGithub/>
+                </a>
+                <a href="mailto:andresninorodil@gmail.com">
+                    <MdEmail className='page__contact__icons-bigger'/>
+                </a>
             </div>
         </div>
     );
