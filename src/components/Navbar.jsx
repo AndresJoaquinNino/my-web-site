@@ -41,10 +41,26 @@ const Navbar = () => {
                     EN
                 </div>
                 <ul className="page__navbar-list">
-                    <li className="page__navbar-list__item">HOME</li>
-                    <li className="page__navbar-list__item">ABOUT</li>
-                    <li className="page__navbar-list__item">SKILLS</li>
-                    <li className="page__navbar-list__item">CONTACT</li>
+                    <li className="page__navbar-list__item">
+                        <a href="#home">
+                            HOME
+                        </a>
+                    </li>
+                    <li className="page__navbar-list__item">
+                        <a href="#about">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li className="page__navbar-list__item">
+                        <a href="#skills">
+                            SKILLS
+                        </a>
+                    </li>
+                    <li className="page__navbar-list__item">
+                        <a href="#contact">
+                            CONTACT
+                        </a>
+                    </li>
                 </ul>
                 <div className="page__navbar-icon" onClick={() => setIsOpenSidebar(!isOpenSidebar)}>
                     <MdOutlineMenu/>
@@ -55,10 +71,26 @@ const Navbar = () => {
                     <MdOutlineClose/>
                 </div>
                 <ul className="page__sidebar-list">
-                    <div className="page__sidebar-list__item">HOME</div>
-                    <div className="page__sidebar-list__item">ABOUT</div>
-                    <div className="page__sidebar-list__item">SKILLS</div>
-                    <div className="page__sidebar-list__item">CONTACT</div>
+                    <li className="page__sidebar-list__item">
+                        <a href="#home">
+                            HOME
+                        </a>
+                    </li>
+                    <li className="page__sidebar-list__item">
+                        <a href="#about">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li className="page__sidebar-list__item">
+                        <a href="#skills">
+                            SKILLS
+                        </a>
+                    </li>
+                    <li className="page__sidebar-list__item">
+                        <a href="#contact">
+                            CONTACT
+                        </a>
+                    </li>
                 </ul>
             </motion.aside>
         </header>

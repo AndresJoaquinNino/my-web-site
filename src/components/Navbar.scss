@@ -28,6 +28,10 @@
         list-style-type: none;
         &__item{
             cursor: pointer;
+            a{
+                color: colors.$light;
+                text-decoration: none;
+            }
         }
     }
     &-icon{
@@ -52,6 +56,10 @@
         @include flex-center(column,2rem);
         &__item{
             font-size: 1.8rem;
+            a{
+                color: colors.$light;
+                text-decoration: none;
+            }
             cursor: pointer;
         }
     }
