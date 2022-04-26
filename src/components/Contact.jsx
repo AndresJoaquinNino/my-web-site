@@ -4,7 +4,7 @@ import { MdSend, MdEmail } from "react-icons/md";
 
 const Contact = () => {
     return (
-        <div className='page__contact'>
+        <div className='page__contact' id='contact'>
             <header className='gradient-text'>
                 <h1>Contact me</h1>
                 <hr className="divider-secondary" />

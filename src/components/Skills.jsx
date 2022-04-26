@@ -28,7 +28,7 @@ const Skills = () => {
     const othersSkills = ['English','Git/Github'];
 
     return (
-        <div className='page__skills'>
+        <div className='page__skills' id='skills'>
             <header className='page__skills-header gradient-text'>
                 <h1>My skill set</h1>
                 <hr className='divider-secondary' />

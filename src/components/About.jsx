@@ -3,7 +3,7 @@ import profilePhoto from './../assets/profilePhoto.jpg';
 
 const About = () => {
     return(
-        <div className='page__about'>
+        <div className='page__about' id='about'>
             <header className="page__about-header">
                 <h1 className='gradient-text'>About me</h1>
                 <hr className='divider-primary'/>

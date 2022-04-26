@@ -26,7 +26,7 @@ const Hero = () => {
     }
 
     return (
-        <main className='page__hero'>
+        <main className='page__hero' id='home'>
             <div className='page__hero-content'>
                 <header className='page__hero-content__header gradient-text'>
                     <h1>Hello,</h1>
