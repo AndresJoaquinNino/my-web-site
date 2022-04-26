@@ -1,40 +1,58 @@
 import './Contact.scss';
-import { FaGithub, FaLinkedin  } from "react-icons/fa";
-import { MdSend, MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin  } from 'react-icons/fa';
+import { MdSend, MdEmail } from 'react-icons/md';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const Contact = () => {
+
+    const validateForm = (values) => {
+        const errors = {};
+        for (const field in values){
+            if(values[field].trim() === '') errors[field] = '* Required'
+        }
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+        if(!emailRegex.test(values.email)) errors.email = '* Invalid email address'
+        return errors;
+    }
+
     return (
         <div className='page__contact' id='contact'>
             <header className='gradient-text'>
                 <h1>Contact me</h1>
-                <hr className="divider-secondary" />
+                <hr className='divider-secondary' />
             </header>
-            <form className='form'>
-                <div className="form__group">
-                    <input type="text" className="form__group-input" placeholder='Name'/>
-                    <span className='form__group-msg'> * El nombre no puede estar en blanco</span>
-                </div>
-                <div className="form__group">
-                    <input type="email" className="form__group-input" placeholder='Email'/>
-                    <span className='form__group-msg'> * El formato no es correcto</span>
-                </div>
-                <div className="form__group form__group--area">
-                    <textarea className="form__group-area" placeholder='Message'/>
-                    <span className='form__group-msg'> * El mensaje no puede estar en blanco</span>
-                </div>
-                <button className='btn btn--primary btn--full'>
-                    <span>Send</span>
-                    <MdSend/>
-                </button>
-            </form>
+            <Formik
+                initialValues={{name:'',email:'',text:''}}
+                validate={validateForm}
+                onSubmit={value => console.log(value)}
+            >
+                <Form className='form'>
+                    <div className='form__group'>
+                        <Field type='text' name='name' className='form__group-input' placeholder='Name'/>
+                        <ErrorMessage name='name' className='form__group-msg'/>
+                    </div>
+                    <div className='form__group'>
+                        <Field type='email' name='email' className='form__group-input' placeholder='Email'/>
+                        <ErrorMessage name='email' className='form__group-msg'/>
+                    </div>
+                    <div className='form__group form__group--area'>
+                        <Field as='textarea' name='text' className='form__group-area' placeholder='Message'/>
+                        <ErrorMessage name='text' className='form__group-msg'/>
+                    </div>
+                    <button type='submit' className='btn btn--primary btn--full'>
+                        <span>Send</span>
+                        <MdSend/>
+                    </button>
+                </Form>
+            </Formik>
             <div className='page__contact__icons'>
-                <a href="https://www.linkedin.com/in/andr%C3%A9s-joaquin-ni%C3%B1o-rodil/">
+                <a href='https://www.linkedin.com/in/andr%C3%A9s-joaquin-ni%C3%B1o-rodil/'>
                     <FaLinkedin/>
                 </a>
-                <a href="https://github.com/AndresJoaquinNino">
+                <a href='https://github.com/AndresJoaquinNino'>
                     <FaGithub/>
                 </a>
-                <a href="mailto:andresninorodil@gmail.com">
+                <a href='mailto:andresninorodil@gmail.com'>
                     <MdEmail className='page__contact__icons-bigger'/>
                 </a>
             </div>
