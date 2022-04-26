@@ -1,5 +1,5 @@
 import './Navbar.scss';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 import { MdOutlineMenu, MdOutlineClose } from "react-icons/md";
 import { useEffect, useState } from 'react';
 
@@ -18,22 +18,25 @@ const Navbar = () => {
         })
     });
 
+    const supportedCss = '((-webkit-backdrop-filter: none) or (backdrop-filter: none))';
+    const supportBlur = window.CSS.supports(supportedCss);
+
     const navbarAnimations = {
         'down':{
             y : '-4rem',
         },
         'up':{
             backdropFilter:'blur(15px)',
-            backgroundColor:'#42424266'
+            backgroundColor: supportBlur ? '#42424266' : '#424242e6'
         },
         'top':{
             backgroundColor:'#42424200'
         }
     }
+
     return(
         <header className='page-header'>
-            <motion.nav className='page__navbar' animate={navbarAnimations[navbarStatus]}
-            transition={{type:'tween'}}>
+            <motion.nav className='page__navbar' animate={navbarAnimations[navbarStatus]} transition={{type:'tween'}}>
                 <div className='page__navbar-lang'>
                     EN
                 </div>

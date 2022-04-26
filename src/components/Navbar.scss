@@ -63,6 +63,11 @@
         @include flex-center(row);
     }
 }
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .page__sidebar {
+      background-color: #424242e6;
+    }
+}
 
 @media (min-width: 662px) {
     .page__navbar{
