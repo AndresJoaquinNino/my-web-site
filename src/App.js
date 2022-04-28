@@ -1,27 +1,15 @@
 import './App.scss';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
 
 const App = () => {
     return (
-        <div className='wrapper'>
-            <div className='page'>
-                <Navbar/>
-                <Hero/>
-            </div>
-            <div className="gradient-bg">
-                <div className="page">
-                    <About/>
-                    <Skills/>
-                </div>
-            </div>
-            <div className='page'>
-                <Contact/>
-            </div>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="*" element={<h1>404</h1>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 export default App;
