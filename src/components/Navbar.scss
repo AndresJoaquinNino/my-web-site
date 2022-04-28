@@ -20,8 +20,15 @@
     justify-content: space-between;
     font-size: 1.4rem;
     &-lang{
+        font-size: 1.4rem;
+        background-color: transparent;
+        color: colors.$light;
+        border: none;
         border-bottom: 1px solid colors.$light;
-        @include flex-center(row);
+        outline: none;
+        option{
+            background-color: colors.$dark;
+        }
     }
     &-list{
         display: none;
@@ -89,4 +96,8 @@
     .page__sidebar{
         display: none;
     }
+}
+
+select{
+
 }

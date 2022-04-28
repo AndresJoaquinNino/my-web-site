@@ -37,9 +37,10 @@ const Navbar = () => {
     return(
         <header className='page-header'>
             <motion.nav className='page__navbar' animate={navbarAnimations[navbarStatus]} transition={{type:'tween'}}>
-                <div className='page__navbar-lang'>
-                    EN
-                </div>
+                <select className='page__navbar-lang'>
+                        <option>EN</option>
+                        <option>ES</option>
+                </select>
                 <ul className="page__navbar-list">
                     <li className="page__navbar-list__item">
                         <a href="#home">
