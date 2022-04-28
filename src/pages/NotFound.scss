@@ -1,0 +1,15 @@
+@use '../scss/mixins' as *;
+@use '../scss/fonts';
+@use '../scss/colors';
+
+.page__not-found{
+    text-align: center;
+    width: min(100%,600px);
+    height: 90vh;
+    margin: 0 auto;
+    @include flex-center(column);
+    &-header{
+        font-size: fonts.$header;
+        width: 100%;
+    }
+}
