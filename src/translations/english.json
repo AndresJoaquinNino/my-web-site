@@ -1,8 +1,28 @@
 {
+    "navbar" : {
+        "hero" : "HOME",
+        "about" : "ABOUT",
+        "skills" : "SKILLS",
+        "contact" : "CONTACT"
+    },
     "hero":{
         "header": "Hello,\nI'am Andrés J. Niño,\nWeb Developer",
         "paragraph":"Passionate for the frontend, creating awesome web sites for all internet.",
         "btnResume" : "My Resume",
         "btnContact" : "Contact me"
+    },
+    "about" : {
+        "header" : "About Me",
+        "paragraph" : "I always enjoy the technology, as i know more and the time passed that joy becomes in love. Eventually i start in collage studding electronic engineering on computation, in parallel i learn web development. Once graduated, i get a job on the software industry, since then i'm  focus every day be a better profesional and person."
+    },
+    "skills" : {
+        "header" : "My Skills Set"
+    },
+    "contact" : {
+        "header" : "Contact Me",
+        "inputName" : "Name",
+        "inputEmail" : "Email",
+        "inputMessage" : "Message",
+        "button" : "Send"
     }
 }

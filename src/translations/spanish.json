@@ -1,8 +1,28 @@
 {
-    "hero":{
-        "header" : "Hols,\nsoy Andrés J. Niño,\nDesarrollador Web",
+    "navbar" : {
+        "hero" : "INICIO",
+        "about" : "SOBRE",
+        "skills" : "HABILIDADES",
+        "contact" : "CONTACTAR"
+    },
+    "hero" : {
+        "header" : "Hola,\nsoy Andrés J. Niño,\nDesarrollador Web",
         "paragraph" : "Apasionado por el frontend, creando paginas increíbles para todo el internet.",
         "btnResume" : "Ver mi Curriculum",
         "btnContact" : "Contacta me"
+    },
+    "about" : {
+        "header" : "Sobre Mi",
+        "paragraph" : "Siempre me ha gustado la tecnología, en la medida que conozco más de ella y con el pasar del tiempo ese gusto se ha convertido en amor. Eventualmente estudié Ingeniería electrónica en computación, y en paralelo aprendí de desarrollo web. Una vez graduado comencé a trabajar en la industria del software, desde entonces me enfoco en cada día ser mejor profesional y mejor persona."
+    },
+    "skills" : {
+        "header" : "Mis Habilidades"
+    },
+    "contact" : {
+        "header" : "Contacta Me",
+        "inputName" : "Nombre",
+        "inputEmail" : "Correo",
+        "inputMessage" : "Mensaje",
+        "button" : "Enviar"
     }
 }
