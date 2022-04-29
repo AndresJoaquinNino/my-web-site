@@ -11,7 +11,7 @@ i18next.init({
     interpolation: {
         escapeValue: false
     },
-    lng: 'en',
+    lng: 'es',
     resources:{
         es: {
             global: spanish
@@ -27,7 +27,8 @@ const App = () => {
         <I18nextProvider i18n={i18next}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<Home lang='es'/>}/>
+                    <Route path="/en" element={<Home lang='en'/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
