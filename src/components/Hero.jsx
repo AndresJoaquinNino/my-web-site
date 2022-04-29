@@ -2,8 +2,11 @@ import './Hero.scss';
 import Typewriter from 'typewriter-effect';
 import codeText from '../helpers/codeText';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+
+    const {t:text, i18n} = useTranslation("global");
 
     const typewriterInit = (typewriter) => {
         typewriter.pauseFor(1000).typeString(codeText).start();
@@ -29,13 +32,9 @@ const Hero = () => {
         <main className='page__hero' id='home'>
             <div className='page__hero-content'>
                 <header className='page__hero-content__header gradient-text'>
-                    <h1>Hello,</h1>
-                    <h1>I'am Andrés J. Niño,</h1>
-                    <h1>Desarrollador Web</h1>
+                    <h1 className='page__hero-content__header-text'>{ text('hero.header') }</h1>
                     <hr className='divider-primary'/>
-                    <p>
-                        Passionate for the frontend, creating awesome web sites for all internet.
-                    </p>
+                    <p>{ text('hero.paragraph') }</p>
                 </header>
                 <div className="page__hero-content__code">
                     <motion.div className='transparent-box'
@@ -45,8 +44,8 @@ const Hero = () => {
                 </div>
             </div>
             <div className='page__hero-cta'>
-                <button className='btn btn--secondary-transp'>Contact me</button>
-                <button className='btn btn--primary'>My Resume</button>
+                <button className='btn btn--secondary-transp'>{ text('hero.btnResume') }</button>
+                <button className='btn btn--primary'>{ text('hero.btnContact') }</button>
             </div>
         </main>
     );
