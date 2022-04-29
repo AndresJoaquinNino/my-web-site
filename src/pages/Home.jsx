@@ -3,8 +3,15 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
-const Home = () => {
+const Home = ({lang}) => {
+    const { i18n } = useTranslation("global");
+    useEffect(() => {
+        i18n.changeLanguage(lang)
+    },[lang])
+
     return (
         <div className='wrapper'>
             <div className='page'>
