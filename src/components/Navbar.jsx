@@ -2,8 +2,14 @@ import './Navbar.scss';
 import { motion, useViewportScroll } from 'framer-motion';
 import { MdOutlineMenu, MdOutlineClose } from "react-icons/md";
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+
 
 const Navbar = () => {
+    const { t : translate } = useTranslation("global");
+    const navigate = useNavigate();
+
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
     const { scrollYProgress } = useViewportScroll();
     const defaultNavStatus = scrollYProgress.current < 0.01 ? 'top' : 'up';
@@ -37,29 +43,29 @@ const Navbar = () => {
     return(
         <header className='page-header'>
             <motion.nav className='page__navbar' animate={navbarAnimations[navbarStatus]} transition={{type:'tween'}}>
-                <select className='page__navbar-lang'>
-                        <option>EN</option>
-                        <option>ES</option>
+                <select className='page__navbar-lang' onChange={({target}) => (navigate(target.value))}>
+                        <option value='/'>ES</option>
+                        <option value='/en'>EN</option>
                 </select>
                 <ul className="page__navbar-list">
                     <li className="page__navbar-list__item">
                         <a href="#home">
-                            HOME
+                            { translate("navbar.hero") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
                         <a href="#about">
-                            ABOUT
+                            { translate("navbar.about") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
                         <a href="#skills">
-                            SKILLS
+                            { translate("navbar.skills") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
                         <a href="#contact">
-                            CONTACT
+                        { translate("navbar.contact") }
                         </a>
                     </li>
                 </ul>
@@ -74,22 +80,22 @@ const Navbar = () => {
                 <ul className="page__sidebar-list">
                     <li className="page__sidebar-list__item">
                         <a href="#home">
-                            HOME
+                            { translate("navbar.hero") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
                         <a href="#about">
-                            ABOUT
+                            { translate("navbar.about") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
                         <a href="#skills">
-                            SKILLS
+                            { translate("navbar.skills") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
                         <a href="#contact">
-                            CONTACT
+                            { translate("navbar.contact") }
                         </a>
                     </li>
                 </ul>

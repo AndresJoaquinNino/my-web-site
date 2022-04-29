@@ -1,5 +1,6 @@
 import './Skills.scss';
 import { BsDiamond } from "react-icons/bs";
+import { useTranslation } from 'react-i18next';
 
 const ListSkills = ({title,skills}) => {
     return(
@@ -23,6 +24,8 @@ const ListSkills = ({title,skills}) => {
 }
 
 const Skills = () => {
+    const { t : translate } = useTranslation("global");
+
     const frontendSkills = ['React','JavaScript +ES6','Sass/Scss','Html/Css'];
     const backedSkills = ['Php','Sql Server','My Sql','Firebase'];
     const othersSkills = ['English','Git/Github'];
@@ -30,7 +33,7 @@ const Skills = () => {
     return (
         <div className='page__skills' id='skills'>
             <header className='page__skills-header gradient-text'>
-                <h1>My skill set</h1>
+                <h1>{ translate("skills.header") }</h1>
                 <hr className='divider-secondary' />
             </header>
             <div className='page__skills-content'>

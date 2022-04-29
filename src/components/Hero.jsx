@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
 
-    const {t:text, i18n} = useTranslation("global");
+    const { t : translate } = useTranslation("global");
 
     const typewriterInit = (typewriter) => {
         typewriter.pauseFor(1000).typeString(codeText).start();
@@ -32,9 +32,9 @@ const Hero = () => {
         <main className='page__hero' id='home'>
             <div className='page__hero-content'>
                 <header className='page__hero-content__header gradient-text'>
-                    <h1 className='page__hero-content__header-text'>{ text('hero.header') }</h1>
+                    <h1 className='page__hero-content__header-text'>{ translate('hero.header') }</h1>
                     <hr className='divider-primary'/>
-                    <p>{ text('hero.paragraph') }</p>
+                    <p>{ translate('hero.paragraph') }</p>
                 </header>
                 <div className="page__hero-content__code">
                     <motion.div className='transparent-box'
@@ -44,8 +44,8 @@ const Hero = () => {
                 </div>
             </div>
             <div className='page__hero-cta'>
-                <button className='btn btn--secondary-transp'>{ text('hero.btnResume') }</button>
-                <button className='btn btn--primary'>{ text('hero.btnContact') }</button>
+                <button className='btn btn--secondary-transp'>{ translate('hero.btnResume') }</button>
+                <button className='btn btn--primary'>{ translate('hero.btnContact') }</button>
             </div>
         </main>
     );

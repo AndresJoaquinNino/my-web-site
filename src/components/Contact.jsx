@@ -2,8 +2,10 @@ import './Contact.scss';
 import { FaGithub, FaLinkedin  } from 'react-icons/fa';
 import { MdSend, MdEmail } from 'react-icons/md';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+    const { t : translate } = useTranslation("global");
 
     const validateForm = (values) => {
         const errors = {};
@@ -18,7 +20,7 @@ const Contact = () => {
     return (
         <div className='page__contact' id='contact'>
             <header className='gradient-text'>
-                <h1>Contact me</h1>
+                <h1>{ translate("contact.header") }</h1>
                 <hr className='divider-secondary' />
             </header>
             <Formik
@@ -28,19 +30,19 @@ const Contact = () => {
             >
                 <Form className='form'>
                     <div className='form__group'>
-                        <Field type='text' name='name' className='form__group-input' placeholder='Name'/>
+                        <Field type='text' name='name' className='form__group-input' placeholder={translate("contact.inputName")}/>
                         <ErrorMessage name='name' className='form__group-msg'/>
                     </div>
                     <div className='form__group'>
-                        <Field type='email' name='email' className='form__group-input' placeholder='Email'/>
+                        <Field type='email' name='email' className='form__group-input' placeholder={translate("contact.inputEmail")}/>
                         <ErrorMessage name='email' className='form__group-msg'/>
                     </div>
                     <div className='form__group form__group--area'>
-                        <Field as='textarea' name='text' className='form__group-area' placeholder='Message'/>
+                        <Field as='textarea' name='text' className='form__group-area' placeholder={translate("contact.inputMessage")}/>
                         <ErrorMessage name='text' className='form__group-msg'/>
                     </div>
                     <button type='submit' className='btn btn--primary btn--full'>
-                        <span>Send</span>
+                        <span>{ translate("contact.button") }</span>
                         <MdSend/>
                     </button>
                 </Form>
