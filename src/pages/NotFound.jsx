@@ -12,7 +12,7 @@ const NotFound = () => {
                         </h1>
                         <hr className="divider-primary mb-2" />
                     </header>
-                    <Link className='btn btn--secondary-transp' to='/'>My Resume</Link>
+                    <Link className='btn btn--secondary-transp' to='/'>Go Home</Link>
                 </div>
             </div>
         </div>
