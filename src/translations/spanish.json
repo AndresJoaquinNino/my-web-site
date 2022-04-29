@@ -1,0 +1,8 @@
+{
+    "hero":{
+        "header" : "Hols, soy Andrés J. Niño, Desarrollador Web",
+        "paragraph" : "Apasionado por el frontend, creando paginas increíbles para todo el internet.",
+        "btnResume" : "Ver mi Curriculum",
+        "btnContact" : "Contacta me"
+    }
+}
