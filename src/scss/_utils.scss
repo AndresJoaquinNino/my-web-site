@@ -25,4 +25,12 @@ $text-colors: (
     .ml-#{$number}{
         margin-left: #{$number}rem;
     }
+    .m-#{$number}{
+        margin: #{$number}rem;
+    }
+}
+
+.row{
+    display: flex;
+    align-items: center;
 }
