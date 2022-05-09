@@ -5,6 +5,7 @@ import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Home = ({lang}) => {
     const { i18n } = useTranslation("global");
@@ -13,6 +14,11 @@ const Home = ({lang}) => {
     },[lang,i18n])
 
     return (
+        <>
+        <Helmet>
+            <title> Andrés J. Niño </title>
+            <meta name="description" content="Andrés J. Niño Web Developer Portafolio" />
+        </Helmet>
         <div className='wrapper'>
             <div className='page'>
                 <Navbar/>
@@ -28,6 +34,7 @@ const Home = ({lang}) => {
                 <Contact/>
             </div>
         </div>
+        </>
     );
 }
 export default Home;
