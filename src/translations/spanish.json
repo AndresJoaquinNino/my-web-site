@@ -21,6 +21,7 @@
     "contact" : {
         "header" : "Contacta Me",
         "inputName" : "Nombre",
+        "inputSubject" : "Asunto",
         "inputEmail" : "Correo",
         "inputMessage" : "Mensaje",
         "button" : "Enviar"
