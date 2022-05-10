@@ -7,6 +7,7 @@ import i18next from 'i18next';
 import spanish from './translations/spanish.json';
 import english from './translations/english.json';
 import { HelmetProvider } from 'react-helmet-async';
+import { NotificationsProvider } from './context/NotificationsContext';
 
 i18next.init({
     interpolation: {
@@ -27,13 +28,15 @@ const App = () => {
     return (
         <I18nextProvider i18n={i18next}>
             <HelmetProvider>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home lang='es'/>}/>
-                        <Route path="/en" element={<Home lang='en'/>}/>
-                        <Route path="*" element={<NotFound/>}/>
-                    </Routes>
-                </BrowserRouter>
+                <NotificationsProvider>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Home lang='es'/>}/>
+                            <Route path="/en" element={<Home lang='en'/>}/>
+                            <Route path="*" element={<NotFound/>}/>
+                        </Routes>
+                    </BrowserRouter>
+                </NotificationsProvider>
             </HelmetProvider>
         </I18nextProvider>
     );
