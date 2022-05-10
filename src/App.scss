@@ -112,5 +112,24 @@ $divider-colors: (
         display: block;
     }
 }
+
+.container-notification{
+    list-style: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 10%;
+    width: min(80%, 20rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media (min-width: 320px) {
+    .container-notification{
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+}
 @import './scss/button';
 @import './scss/utils';
