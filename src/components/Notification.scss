@@ -6,13 +6,23 @@
     height: 4rem;
     background-color: colors.$grey;
     color: colors.$light;
-    border-left: 1rem solid colors.$secondary;
+    border: 2.5px solid colors.$grey-transparent;
     font-family: fonts.$secondary;
     font-size: 1.2rem;
-    @include flex-center();
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     &-message{
         width: calc(100% - 2rem);
         padding: 0 0.5rem;
+    }
+    &-bar{
+        height: 100%;
+        width: 1rem;
+        background-color: colors.$secondary;
+        &--error{
+            background-color: colors.$primary;
+        }
     }
     &-close{
         font-size: 1.5rem;
@@ -20,8 +30,5 @@
         position: relative;
         top: -20%;
         right: 1%;
-    }
-    &--error{
-        border-left-color: colors.$primary;
     }
 }
