@@ -1,51 +1,55 @@
-import './Contact.scss';
-import { FaGithub, FaLinkedin  } from 'react-icons/fa';
-import { MdSend, MdEmail, MdLoop } from 'react-icons/md';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import './Contact.scss'
+import { FaGithub, FaLinkedin  } from 'react-icons/fa'
+import { MdSend, MdEmail, MdLoop } from 'react-icons/md'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { useTranslation } from 'react-i18next'
+import { useState,useContext } from 'react'
 import { motion } from 'framer-motion'
+import { sendContactData } from '../helpers/fetch'
+import { NotificationsContext } from '../context/NotificationsContext';
+
 
 const Contact = () => {
-    const { t : translate } = useTranslation('global');
+    const { t : translate } = useTranslation('global')
+
+    const { notifications, addNotification } = useContext(NotificationsContext);
+
 
     const [isSending, setIsSending] = useState(false)
 
     const handlerSubmit = async (values) => {
-        const URL_MAIL_SERVICE = process.env.REACT_APP_MAILER_SERVICE
         setIsSending(true)
-        const config = {
-            method: 'POST',
-            body: JSON.stringify(values)
+        const URL_MAIL_SERVICE = process.env.REACT_APP_MAILER_SERVICE
+        const [result] = await sendContactData(URL_MAIL_SERVICE,values)
+        const newNotification = {
+            id : notifications.length,
+            message : result ? result.message : 'Error sending data',
+            type : result ? 'success' : 'error',
         }
-        const response = await fetch(URL_MAIL_SERVICE,config)
-        const result = await response.json()
-        console.log(result)
+        addNotification(newNotification)
         setIsSending(false)
     }
 
+
     const validateForm = (values) => {
         const errors = {}
-
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
         if(!emailRegex.test(values.email)) errors.email = '* Invalid email address'
-
         const maxLength = {
             name : 50,
             email : 100,
             subject : 50,
             message : 500
         }
-
         for (const field in values){
             if(values[field].length > maxLength[field]) errors[field] = `* Max length exceded (${maxLength[field]})`
             if(values[field].trim() === '') errors[field] = '* Required'
         }
-
-        return errors;
+        return errors
     }
 
     return (
+        <>
         <div className='page__contact' id='contact'>
             <header className='gradient-text'>
                 <h1>{ translate('contact.header') }</h1>
@@ -74,11 +78,11 @@ const Contact = () => {
                         <Field as='textarea' name='message' className='form__group-area' placeholder={translate('contact.inputMessage')}/>
                         <ErrorMessage name='message' className='form__group-msg'/>
                     </div>
-                    <button type='submit' className='btn btn--primary btn--full'>
+                    <button type='submit' className='btn btn--primary btn--full' disabled={isSending}>
                         {
                             isSending
                             ? <motion.div className='row m-0' animate={{rotate: [360,0]}}
-                                transition={{ duration: 1, ease: "linear", repeat: Infinity,}}>
+                            transition={{ duration: 1, ease: "linear", repeat: Infinity,}}>
                                     <MdLoop/>
                               </motion.div>
                             : <> <h4>{ translate('contact.button') }</h4> <MdSend/> </>
@@ -86,9 +90,6 @@ const Contact = () => {
                     </button>
                 </Form>
             </Formik>
-            <div className=' notification'>
-
-            </div>
             <div className='page__contact__icons'>
                 <a href='https://www.linkedin.com/in/andr%C3%A9s-joaquin-ni%C3%B1o-rodil/'>
                     <FaLinkedin/>
@@ -101,7 +102,8 @@ const Contact = () => {
                 </a>
             </div>
         </div>
-    );
+        </>
+    )
 }
 
-export default Contact;
+export default Contact
