@@ -3,10 +3,12 @@ import Typewriter from 'typewriter-effect';
 import codeText from '../helpers/codeText';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import curriculum from '../files/curriculum.pdf'
 
 const Hero = () => {
 
     const { t : translate } = useTranslation("global");
+
 
     const typewriterInit = (typewriter) => {
         typewriter.pauseFor(1000).typeString(codeText).start();
@@ -44,8 +46,10 @@ const Hero = () => {
                 </div>
             </div>
             <div className='page__hero-cta'>
-                <button className='btn btn--secondary-transp'>{ translate('hero.btnResume') }</button>
-                <button className='btn btn--primary'>{ translate('hero.btnContact') }</button>
+                <a href={curriculum} target='_blank' rel="noreferrer" className='btn btn--secondary-transp'>
+                    { translate('hero.btnResume') }
+                </a>
+                <a href='#contact' className='btn btn--primary'>{ translate('hero.btnContact') }</a>
             </div>
         </main>
     );
