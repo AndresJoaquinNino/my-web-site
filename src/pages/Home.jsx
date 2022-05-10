@@ -3,12 +3,19 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
+import Notification from '../components/Notification';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { NotificationsContext } from '../context/NotificationsContext';
+
 
 const Home = ({lang}) => {
+
+    const { notifications, deleteNotification } = useContext(NotificationsContext);
+
     const { i18n } = useTranslation("global");
+
     useEffect(() => {
         i18n.changeLanguage(lang)
     },[lang,i18n])
@@ -33,6 +40,15 @@ const Home = ({lang}) => {
             <div className='page'>
                 <Contact/>
             </div>
+        </div>
+        <div className='container-notification'>
+            {notifications.map((ele,index) => (
+                <Notification key={index}
+                message={ele.message}
+                type={ele.type}
+                index={index}
+                close={deleteNotification}/>
+            ))}
         </div>
         </>
     );
