@@ -15,6 +15,10 @@ const Navbar = () => {
     const defaultNavStatus = scrollYProgress.current < 0.01 ? 'top' : 'up';
     const [navbarStatus, setNavbarStatus] = useState(defaultNavStatus);
 
+    const closeSideBar = () => {
+        setIsOpenSidebar(false)
+    }
+
     useEffect(() => {
         return scrollYProgress.onChange(() => {
             const { current, prev } = scrollYProgress;
@@ -49,22 +53,22 @@ const Navbar = () => {
                 </select>
                 <ul className="page__navbar-list">
                     <li className="page__navbar-list__item">
-                        <a href="#home">
+                        <a href="#home" onClick={closeSideBar}>
                             { translate("navbar.hero") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#about">
+                        <a href="#about" onClick={closeSideBar}>
                             { translate("navbar.about") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#skills">
+                        <a href="#skills" onClick={closeSideBar}>
                             { translate("navbar.skills") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#contact">
+                        <a href="#contact" onClick={closeSideBar}>
                         { translate("navbar.contact") }
                         </a>
                     </li>
@@ -79,22 +83,22 @@ const Navbar = () => {
                 </div>
                 <ul className="page__sidebar-list">
                     <li className="page__sidebar-list__item">
-                        <a href="#home">
+                        <a href="#home" onClick={closeSideBar}>
                             { translate("navbar.hero") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
-                        <a href="#about">
+                        <a href="#about" onClick={closeSideBar}>
                             { translate("navbar.about") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
-                        <a href="#skills">
+                        <a href="#skills" onClick={closeSideBar}>
                             { translate("navbar.skills") }
                         </a>
                     </li>
                     <li className="page__sidebar-list__item">
-                        <a href="#contact">
+                        <a href="#contact" onClick={closeSideBar}>
                             { translate("navbar.contact") }
                         </a>
                     </li>
