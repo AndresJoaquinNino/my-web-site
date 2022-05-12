@@ -19,7 +19,7 @@
         "header" : "Mis Habilidades"
     },
     "contact" : {
-        "header" : "Contacta Me",
+        "header" : "Contácteme",
         "inputName" : "Nombre",
         "inputSubject" : "Asunto",
         "inputEmail" : "Correo",
