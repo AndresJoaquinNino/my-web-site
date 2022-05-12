@@ -53,22 +53,22 @@ const Navbar = () => {
                 </select>
                 <ul className="page__navbar-list">
                     <li className="page__navbar-list__item">
-                        <a href="#home" onClick={closeSideBar}>
+                        <a href="#home">
                             { translate("navbar.hero") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#about" onClick={closeSideBar}>
+                        <a href="#about">
                             { translate("navbar.about") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#skills" onClick={closeSideBar}>
+                        <a href="#skills">
                             { translate("navbar.skills") }
                         </a>
                     </li>
                     <li className="page__navbar-list__item">
-                        <a href="#contact" onClick={closeSideBar}>
+                        <a href="#contact">
                         { translate("navbar.contact") }
                         </a>
                     </li>
