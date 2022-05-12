@@ -1,16 +1,19 @@
 import './Navbar.scss';
 import { motion, useViewportScroll } from 'framer-motion';
 import { MdOutlineMenu, MdOutlineClose } from "react-icons/md";
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-
+import { useClickOutside } from '../hooks/useClickOutside';
 
 const Navbar = () => {
     const { t : translate } = useTranslation("global");
     const navigate = useNavigate();
 
+    const sidebarRef = useRef(null)
+    useClickOutside(sidebarRef, () => setIsOpenSidebar(false))
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+
     const { scrollYProgress } = useViewportScroll();
     const defaultNavStatus = scrollYProgress.current < 0.01 ? 'top' : 'up';
     const [navbarStatus, setNavbarStatus] = useState(defaultNavStatus);
@@ -77,7 +80,7 @@ const Navbar = () => {
                     <MdOutlineMenu/>
                 </div>
             </motion.nav>
-            <motion.aside className="page__sidebar" animate={{width: isOpenSidebar ? '17.5rem' : '0vw'}}>
+            <motion.aside ref={sidebarRef} className="page__sidebar" animate={{width: isOpenSidebar ? '17.5rem' : '0vw'}}>
                 <div className="page__sidebar-icon" onClick={() => setIsOpenSidebar(!isOpenSidebar)}>
                     <MdOutlineClose/>
                 </div>
