@@ -51,7 +51,7 @@ const Contact = () => {
     return (
         <>
         <div className='page__contact' id='contact'>
-            <header className='page__contact-header gradient-text'>
+            <header className='page__contact-header gradient-text mb-2'>
                 <h1>{ translate('contact.header') }</h1>
                 <hr className='divider-secondary' />
             </header>
