@@ -5,6 +5,9 @@
 .page__contact{
     margin: 0 auto;
     width: min(100%,450px);
+    &-header{
+        font-size: fonts.$header;
+    }
     &__icons{
         font-size: 2rem;
         margin-bottom: 1rem;
