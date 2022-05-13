@@ -6,7 +6,7 @@
         "contact" : "CONTACT"
     },
     "hero":{
-        "header": "Hello,\nI'am Andrés J. Niño,\nFrontend Developer",
+        "header": "Hello,\nI'am Andrés J. Niño,\nWeb Developer",
         "paragraph":"Passionate for the frontend, creating awesome web sites for all internet.",
         "btnResume" : "My Resume",
         "btnContact" : "Contact me"
